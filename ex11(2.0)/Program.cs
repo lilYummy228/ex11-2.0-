@@ -10,11 +10,12 @@ namespace ex11
     {
         static void Main(string[] args)
         {
-            const string CommandInputExit = "exit";
-            const string CommandInputRub = "rub";
-            const string CommandInputUsd = "usd";
-            const string CommandInputCny = "cny";
-            const string CommandInputBack = "back";
+            const string CommandExit = "exit";
+            const string CommandConvertRub = "rub";
+            const string CommandConvertUsd = "usd";
+            const string CommandConvertCny = "cny";
+            const string CommandBack = "back";
+
             float exchangeRubToUsd = 95.71f;
             float exchangeRubToYuan = 13.11f;
             float exchangeUsdToYuan = 0.136976f;
@@ -22,33 +23,33 @@ namespace ex11
             float exchangeYuanToRub = 0.07628f;
             float exchaneYuanToUsd = 7.3f;
             bool isOpen = true;
-            Console.Write($"Введите кол-во {CommandInputRub}: ");
+            Console.Write($"Введите кол-во {CommandConvertRub}: ");
             float rubWallet = Convert.ToSingle(Console.ReadLine());
-            Console.Write($"Введите кол-во {CommandInputUsd}: ");
+            Console.Write($"Введите кол-во {CommandConvertUsd}: ");
             float usdWallet = Convert.ToSingle(Console.ReadLine());
-            Console.Write($"Введите кол-во {CommandInputCny}: ");
+            Console.Write($"Введите кол-во {CommandConvertCny}: ");
             float yuanWallet = Convert.ToSingle(Console.ReadLine());
 
             while (isOpen)
             {
                 Console.Clear();
-                Console.WriteLine($"Ваш баланс:\n{rubWallet} {CommandInputRub}\n{usdWallet} {CommandInputUsd}\n{yuanWallet} {CommandInputCny}");
-                Console.WriteLine($"\nКакую валюту вы хотите сконвертировать?\n1. {CommandInputRub}\n2. {CommandInputUsd}\n3. {CommandInputCny}\n4. {CommandInputExit}");
+                Console.WriteLine($"Ваш баланс:\n{rubWallet} {CommandConvertRub}\n{usdWallet} {CommandConvertUsd}\n{yuanWallet} {CommandConvertCny}");
+                Console.WriteLine($"\nКакую валюту вы хотите сконвертировать?\n1. {CommandConvertRub}\n2. {CommandConvertUsd}\n3. {CommandConvertCny}\n4. {CommandExit}");
                 Console.Write("Введите операцию: ");
                 string chosenOperation = Convert.ToString(Console.ReadLine());
 
                 switch (chosenOperation.ToLower())
                 {
-                    case CommandInputRub:
-                        Console.WriteLine($"В какую валюту вы хотите сконвертировать {CommandInputRub}?\n" +
-                            $"1. {CommandInputUsd}\n2. {CommandInputCny}\n3. {CommandInputBack}");
+                    case CommandConvertRub:
+                        Console.WriteLine($"В какую валюту вы хотите сконвертировать {CommandConvertRub}?\n" +
+                            $"1. {CommandConvertUsd}\n2. {CommandConvertCny}\n3. {CommandBack}");
                         Console.Write("Введите операцию: ");
                         string chosenOperationRub = Convert.ToString(Console.ReadLine());
 
                         switch (chosenOperationRub.ToLower())
                         {
-                            case CommandInputUsd:
-                                Console.Write($"Сколько {CommandInputRub} вы хотите перевести в {CommandInputUsd}? ");
+                            case CommandConvertUsd:
+                                Console.Write($"Сколько {CommandConvertRub} вы хотите перевести в {CommandConvertUsd}? ");
                                 Console.Write("Введите операцию: ");
                                 float rubToUsd = Convert.ToSingle(Console.ReadLine());
 
@@ -65,8 +66,8 @@ namespace ex11
                                     break;
                                 }
 
-                            case CommandInputCny:
-                                Console.Write($"Сколько {CommandInputRub} вы хотите перевести в {CommandInputCny}? ");
+                            case CommandConvertCny:
+                                Console.Write($"Сколько {CommandConvertRub} вы хотите перевести в {CommandConvertCny}? ");
                                 Console.Write("Введите операцию: ");
                                 float rubToCny = Convert.ToSingle(Console.ReadLine());
 
@@ -83,7 +84,7 @@ namespace ex11
                                     break;
                                 }
 
-                            case CommandInputBack:
+                            case CommandBack:
                                 Console.WriteLine("Возвращаемся назад...");
                                 Console.ReadKey();
                                 break;
@@ -94,16 +95,16 @@ namespace ex11
                         }
                         break;
 
-                    case CommandInputUsd:
-                        Console.WriteLine($"В какую валюты вы хотите сконвертировать {CommandInputUsd}?\n" +
-                            $"1. {CommandInputRub}\n2. {CommandInputCny}\n3. {CommandInputBack}");
+                    case CommandConvertUsd:
+                        Console.WriteLine($"В какую валюты вы хотите сконвертировать {CommandConvertUsd}?\n" +
+                            $"1. {CommandConvertRub}\n2. {CommandConvertCny}\n3. {CommandBack}");
                         Console.Write("Введите операцию: ");
                         string chosenOperationUsd = Convert.ToString(Console.ReadLine());
 
                         switch (chosenOperationUsd.ToLower())
                         {
-                            case CommandInputRub:
-                                Console.Write($"Сколько {CommandInputUsd} вы хотите перевести в {CommandInputRub}?\n");
+                            case CommandConvertRub:
+                                Console.Write($"Сколько {CommandConvertUsd} вы хотите перевести в {CommandConvertRub}?\n");
                                 Console.Write("Введите операцию: ");
                                 float UsdToRub = Convert.ToSingle(Console.ReadLine());
 
@@ -120,8 +121,8 @@ namespace ex11
                                     break;
                                 }
 
-                            case CommandInputCny:
-                                Console.Write($"Сколько {CommandInputUsd} вы хотите перевести в {CommandInputCny}?\n");
+                            case CommandConvertCny:
+                                Console.Write($"Сколько {CommandConvertUsd} вы хотите перевести в {CommandConvertCny}?\n");
                                 Console.Write("Введите операцию: ");
                                 float usdToCny = Convert.ToSingle(Console.ReadLine());
 
@@ -138,7 +139,7 @@ namespace ex11
                                     break;
                                 }
 
-                            case CommandInputBack:
+                            case CommandBack:
                                 Console.WriteLine("Возвращаемся назад...");
                                 Console.ReadKey();
                                 break;
@@ -149,16 +150,16 @@ namespace ex11
                         }
                         break;
 
-                    case CommandInputCny:
-                        Console.WriteLine($"В какую валюты вы хотите сконвертировать {CommandInputCny}?\n" +
-                            $"1 - {CommandInputRub}\n2 - {CommandInputUsd}\n3 - {CommandInputBack}");
+                    case CommandConvertCny:
+                        Console.WriteLine($"В какую валюты вы хотите сконвертировать {CommandConvertCny}?\n" +
+                            $"1 - {CommandConvertRub}\n2 - {CommandConvertUsd}\n3 - {CommandBack}");
                         Console.Write("Введите операцию: ");
                         string chosenOperationCny = Convert.ToString(Console.ReadLine());
 
                         switch (chosenOperationCny.ToLower())
                         {
-                            case CommandInputRub:
-                                Console.Write($"Сколько {CommandInputCny} вы хотите перевести в {CommandInputRub}\n?");
+                            case CommandConvertRub:
+                                Console.Write($"Сколько {CommandConvertCny} вы хотите перевести в {CommandConvertRub}\n?");
                                 Console.Write("Введите операцию: ");
                                 float CnyToRub = Convert.ToSingle(Console.ReadLine());
 
@@ -175,8 +176,8 @@ namespace ex11
                                     break;
                                 }
 
-                            case CommandInputUsd:
-                                Console.Write($"Сколько {CommandInputCny} вы хотите перевести в {CommandInputUsd}?\n");
+                            case CommandConvertUsd:
+                                Console.Write($"Сколько {CommandConvertCny} вы хотите перевести в {CommandConvertUsd}?\n");
                                 Console.Write("Введите операцию: ");
                                 float cnyToUsd = Convert.ToSingle(Console.ReadLine());
 
@@ -193,7 +194,7 @@ namespace ex11
                                     break;
                                 }
 
-                            case CommandInputBack:
+                            case CommandBack:
                                 Console.WriteLine("Возвращаемся назад...");
                                 Console.ReadKey();
                                 break;
@@ -204,7 +205,7 @@ namespace ex11
                         }
                         break;
 
-                    case CommandInputExit:
+                    case CommandExit:
                         isOpen = false;
                         break;
                     default:
