@@ -103,7 +103,7 @@ namespace ex11
                         switch (chosenOperationUsd.ToLower())
                         {
                             case CommandInputRub:
-                                Console.Write($"Сколько {CommandInputUsd} вы хотите перевести в {CommandInputRub}?");
+                                Console.Write($"Сколько {CommandInputUsd} вы хотите перевести в {CommandInputRub}?\n");
                                 Console.Write("Введите операцию: ");
                                 float UsdToRub = Convert.ToSingle(Console.ReadLine());
 
@@ -121,7 +121,7 @@ namespace ex11
                                 }
 
                             case CommandInputCny:
-                                Console.Write($"Сколько {CommandInputUsd} вы хотите перевести в {CommandInputCny}?");
+                                Console.Write($"Сколько {CommandInputUsd} вы хотите перевести в {CommandInputCny}?\n");
                                 Console.Write("Введите операцию: ");
                                 float usdToCny = Convert.ToSingle(Console.ReadLine());
 
@@ -158,7 +158,7 @@ namespace ex11
                         switch (chosenOperationCny.ToLower())
                         {
                             case CommandInputRub:
-                                Console.Write($"Сколько {CommandInputCny} вы хотите перевести в {CommandInputRub}? ");
+                                Console.Write($"Сколько {CommandInputCny} вы хотите перевести в {CommandInputRub}\n?");
                                 Console.Write("Введите операцию: ");
                                 float CnyToRub = Convert.ToSingle(Console.ReadLine());
 
@@ -176,7 +176,7 @@ namespace ex11
                                 }
 
                             case CommandInputUsd:
-                                Console.Write($"Сколько {CommandInputCny} вы хотите перевести в {CommandInputUsd}? ");
+                                Console.Write($"Сколько {CommandInputCny} вы хотите перевести в {CommandInputUsd}?\n");
                                 Console.Write("Введите операцию: ");
                                 float cnyToUsd = Convert.ToSingle(Console.ReadLine());
 
